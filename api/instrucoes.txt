@@ -1,0 +1,40 @@
+MySql
+
+    construir a imagem do mysql docker (-t : é para dar uma tag/nome para a imagem | -f : caminho do dockerfile e o '.' é pq queremos buildar na pasta em que estamos, no caso a raiz)
+    build -t mysql-image -f api/db/Dockerfile . (obs, executar na pasta raiz do projeto)
+
+    executar container com persistencia de dados
+    docker run -d -v $(pwd)/api/db/data:/var/lib/mysql -rm --name mysql-container mysql-image
+
+    add um ip para o container contendo o mysql
+    docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mysql-container
+
+    executar comandos no container (opcional, so msm para checar o banco de dados)
+    docker exec -it mysql-container /bin/bash
+
+    executar o script sql
+    docker exec -i mysql-container mysql -uroot -p1234 < api/db/script.sql
+
+Node
+    Pre-requisito: Ter o node na versão 12 instalada (O porque ainda n descobri kkkk)
+
+    dentro da pasta ap
+    - npm init
+
+    instalar nodemon para dar reload automatico toda vez que atualizarmos os arquivos javascript
+    npm install --save-dev nodemon
+
+    instalar o express para criar a api, e o driver do mysql
+    npm install --save express mysql
+
+    + criar o comando "start": "nodemon ./src/index" no package.json
+
+    rodar o dockerfile do node (na pasta raiz do projeto) obs: pode ser nescessário rodar como superusuário
+    docker build -t node-image -f api/DockerfileNode .
+
+    rodar um container com a imagem
+    '-p' serve para conectar a porta 9001 do container com a porta 9001 da nossa maquina, para que o node possa receber requisicoes
+    docker run -d -v $(pwd)/api:/home/node/app -p 9001:9001 --rm --name node-container node-image
+
+    so acessar o endereco http://localhost:9001/products
+
