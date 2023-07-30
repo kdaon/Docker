@@ -6,21 +6,38 @@ O objetivo deste trabalho é apresentar o Docker, uma tecnologia de virtualizaç
 
 Ao final do projeto, esperamos que seja possível ter uma compreensão sólida do Docker, seus benefícios e a forma como facilita o desenvolvimento, implantação e execução de aplicações distribuídas.
 
-Dessa forma, criamos uma aplicação que *[descrição breve da aplicação]*.
+Dessa forma, criamos uma aplicação que pode demonstrar um pouco da utilização do docker em si. 
+<br><br>
 
-> Motivação:
+- __Material de Apoio: Slides__
+```shell
+  ├── documentos
+     └── Slides_Docker.pdf
+```
 
-> Material de Apoio: _link pro slide_
+# Docker
+<div align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/2560px-Docker_%28container_engine%29_logo.svg.png" width="500">
+</div>
+O Docker é uma plataforma de software livre que permite aos desenvolvedores desenvolver, implementar, executar, atualizar e gerenciar componentes de contêineres executáveis e padronizados que combinam o código-fonte de aplicativos com as bibliotecas e estruturas do sistema operacional (S.O.) necessárias para executar o código em qualquer ambiente.<br>
+Os contêineres, por sua vez, simplificam o desenvolvimento e a entrega de aplicativos distribuídos. Além disso, os desenvolvedores podem criar contêineres sem o Docker, trabalhando diretamente com recursos integrados ao Linux e outros sistemas operacionais. Porém, o Docker torna o processo de conteinerização mais rápido, fácil e seguro!
+<br>
 
-
-# API
-*[descrição detalhada da API]* 
-
-*com imagem (opcional)*
+O Docker é tão utilizado atualmente que "Docker" e "contêineres" são usados como sinônimos. Isso se deve ao fato do Docker permitir aos desenvolvedores acessar esses recursos nativos de conteinerização usando comandos simples e automatizá-los por meio de uma interface de programação de aplicativos (API) que reduz a carga de trabalho.
+<br>
+<br>
+Por que utilizar o Docker?
+- Portabilidade de contêiner aprimorada e contínua
+- Mais leve e com atualizações mais granulares
+- Criação automatizada de contêineres
+- Controle de versões de contêineres
+- Bibliotecas compartilhadas de contêineres
 
 
 # Visão Arquitetônica do Sistema
-*[diagrama]*
+<p align="center">
+	<img width="500" src="documentos/Diagrama.png">
+</p>
 
 
 # Tecnologias
@@ -30,7 +47,11 @@ Dessa forma, criamos uma aplicação que *[descrição breve da aplicação]*.
 ![MYSQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
 
-# Instalacao
+# API
+Nesse sistema existem 2 containeres, o primeiro com o mysql e o segundo com o node. O node irá criar uma API para consumir as informações do Banco de Dados.
+
+
+# Instalação
 - MYSQL
   
 Construir a imagem do mysql docker, para isso vamos executar o seguinte comando na pasta raiz do projeto
@@ -99,13 +120,23 @@ Por fim, só acessar o endereço: **http://localhost:9001/products**
 
 
 # Referências Utilizadas
-Vídeo utilizado para apoio do código: https://www.youtube.com/watch?v=Kzcz-EVKBEQ&t=219s
+Vídeo utilizado para apoio do código: 
 
-ChatGPT utilizado para resolver bugs relacionados ao código: https://chat.openai.com
+https://www.youtube.com/watch?v=Kzcz-EVKBEQ&t=219s
 
-Documentação do Docker: https://docs.docker.com/get-started/
+ChatGPT utilizado para resolver bugs relacionados ao código: 
 
-Site de apoio: https://www.hostinger.com.br/tutoriais/o-que-e-docker
+https://chat.openai.com
+
+Documentação do Docker: 
+
+https://docs.docker.com/get-started/
+
+Sites de apoio:
+
+https://www.hostinger.com.br/tutoriais/o-que-e-docker
+
+https://www.ibm.com/br-pt/topics/docker
 
 
 # Autores
